@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->string('auteur');
             $table->string('contenu');
-            $table->timestamps();
             $table->timestamps();
         });
     }
