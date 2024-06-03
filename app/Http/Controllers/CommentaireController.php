@@ -19,4 +19,11 @@ class CommentaireController extends Controller
         return redirect()->back();
     }
 
+    public function supprimer($id){
+        $commentaire=Commentaire::findOrfail($id);
+        $commentaire->delete();
+        return redirect()->back()->with('success','commentaire supprimer avec succes');
+
+    }
+
 }
