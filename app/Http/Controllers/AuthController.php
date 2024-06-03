@@ -15,7 +15,7 @@ class AuthController extends Controller
    }
 
    public function inscriptionPost(Request $request){
-    $request=validate([
+    $request->validate([
         'nom'=>'required|max:30',
         'prenom'=>'required|max:50',
         'telephone'=>'required|max:15',
