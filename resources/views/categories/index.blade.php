@@ -9,6 +9,11 @@
 <body>
     <div class="container mt-5">
         <h1>Catégories</h1>
+        @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
         <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Créer une nouvelle catégorie</a>
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -24,13 +29,16 @@
                     <tr>
                         <td>{{ $categorie->nom }}</td>
                         <td>{{ $categorie->description }}</td>
-                        <td> <form action="{{ route('categories.destroy', $categorie->id) }}" method="POST" style="display:inline;">
-                            @csrf
+                        <td>
+                            <a href="{{ route('categories.edit', $categorie->id) }}" class="btn btn-secondary">Modifier</a>
+
+                            <form action="{{ route('categories.destroy', $categorie->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?');">
+                                @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Supprimer</button>
                         </form></td>
                     </tr>
-                  
+
                 @endforeach
             </tbody>
         </table>

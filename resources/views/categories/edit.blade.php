@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer une catégorie</title>
+    <title>Modifier la catégorie</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
+
     <div class="container mt-5">
-        <h1>Créer une catégorie</h1>
-        <form action="{{ route('categories.store') }}" method="POST">
+        <h1>Modifier la catégorie</h1>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+        <form action="{{ route('categories.update', $categorie->id) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="nom">Nom</label>
-                <input type="text" name="nom" class="form-control" id="nom" required>
+                <input type="text" name="nom" class="form-control" id="nom" value="{{ $categorie->nom }}" required>
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" class="form-control" id="description" rows="4"></textarea>
+                <textarea name="description" class="form-control" id="description" rows="4">{{ $categorie->description }}</textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Soumettre</button>
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
         </form>
     </div>
 

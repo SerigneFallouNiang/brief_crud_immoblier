@@ -21,5 +21,9 @@ Route::controller(CategorieController::class)->group(function (){
     Route::post('categories/store', 'store')->name('categories.store');
     Route::delete('{categorie}', 'destroy')->name('categories.destroy');
 
+    Route::get('{categorie}/edit',  'edit')->name('categories.edit');
+    Route::put('{categorie}', 'update')->name('categories.update');
+    
+
 
 });
