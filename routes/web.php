@@ -11,7 +11,7 @@ Route::get('/', function () {
 Route::controller(AuthController::class)->group(function(){
 
     Route::get('/inscription','inscription')->name('inscription');
-    Route::post('/inscription','inscription')->name('inscription');
+    Route::post('/inscription','inscriptionPost')->name('inscription');
 
 
 });
