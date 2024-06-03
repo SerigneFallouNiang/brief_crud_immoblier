@@ -9,6 +9,12 @@ class CategorieController extends Controller
 {
     //
 
+    public function index()
+    {
+        $categories = Categorie::all();
+        return view('categories.index', compact('categories'));
+    }
+
 
       // Afficher le formulaire de création de catégorie
       public function create()
