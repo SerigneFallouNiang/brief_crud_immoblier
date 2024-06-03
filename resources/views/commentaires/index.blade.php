@@ -28,12 +28,12 @@
 
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
-        <div class="fw-bold">Subheading</div>
+        <div class="fw-bold">{{$commentaire->auteur}}</div>
         <p>{{$commentaire->contenu}}</p>
       </div>
       <div>
      <p><a onclick="return confirm('Confirmer la suppression')"  href="/supprimer/{{$commentaire->id}}" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Suprimer</a>  </p>
-        <p><a href="#" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Modifier</a></p>
+        <p><a href="/modifier/{{$commentaire->id}}" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Modifier</a></p>
 </div>
     </li>
     @endforeach

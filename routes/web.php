@@ -44,4 +44,9 @@ Route::controller(CommentaireController::class)->group(function(){
 
     Route::get('/supprimer/{id}','supprimer')->name('supprimer');
 
+    Route::get('/modifier/{id}','modifier')->name('modifier');
+    Route::post('/modifier/traitement/','modifierPost')->name('modifier');
+
+
+
 });

@@ -23,6 +23,19 @@ class CommentaireController extends Controller
         $commentaire=Commentaire::findOrfail($id);
         $commentaire->delete();
         return redirect()->back()->with('success','commentaire supprimer avec succes');
+    }
+
+    public function modifier($id){
+        $commentaires=Commentaire::find($id);
+        return view('commentaires.modification',compact('commentaires'));
+    }
+
+    public function modifierPost(Request $request){
+        $commentaire= Commentaire::find($request->id);
+         $commentaire->auteur=$request->auteur;
+         $commentaire->contenu=$request->contenu;
+         $commentaire->update();
+        return redirect()->back()->with('success','commentaire modifier avec succes');
 
     }
 
