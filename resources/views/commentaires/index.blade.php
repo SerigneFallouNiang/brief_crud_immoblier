@@ -10,10 +10,14 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1>Inscription</h1>
+            <h1>Detail</h1>
 <div class="container"><div class="row"></div></div>
 <ul class="list-group">
-    <li class="list-group-item">An item</li>
+    @foreach ($commentaires as $commentaire)
+ 
+    <li class="list-group-item">{{$commentaire->auteur}}</li>
+    <li class="list-group-item">{{$commentaire->contenu}}</li>
+    @endforeach
   </ul>
   <form action="{{route('commentaire')}}" method="post">
     @csrf

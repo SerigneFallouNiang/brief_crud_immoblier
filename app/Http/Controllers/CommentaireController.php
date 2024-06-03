@@ -9,11 +9,13 @@ use App\Http\Controllers\CommentaireController;
 class CommentaireController extends Controller
 {
     public function commentaire(){
-        return view('commentaires.index');
+        $commentaires=Commentaire::All();
+        return view('commentaires.index',compact('commentaires'));
     }
 
     public function commentairePost(Request $request){
-        Commentaire::create($request->all());
+       Commentaire::create($request->all());
+
         return redirect()->back();
     }
 
