@@ -46,6 +46,7 @@ Route::controller(BienController::class)->group(function (){
     Route::post('biens/store', 'store')->name('biens.store');
     Route::get('biens/show/{id}', 'show')->name('biens.show');
 
+    Route::delete('{biens}', 'destroy')->name('biens.destroy');
 
 
 

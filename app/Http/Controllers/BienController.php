@@ -63,4 +63,13 @@ class BienController extends Controller
            $bien = Bien::findOrFail($id);
            return view('biens.show', compact('bien'));
        }
+
+       // Supprime un bien de la base de données
+    public function destroy($id)
+    {
+        $bien = Bien::findOrFail($id);
+        $bien->delete();
+
+        return redirect()->route('biens.index')->with('success', 'Bien supprimé avec succès.');
+    }
 }

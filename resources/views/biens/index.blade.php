@@ -35,7 +35,11 @@
                     <td>{{ $bien->prix }} Cfa</td>
                     <td>
                         <a href="{{ url('biens/show/'. $bien->id) }}" class="btn btn-info btn-sm">Voir</a>
-
+                        <form action="{{ route('biens.destroy', $bien->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce bien ?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
