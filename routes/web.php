@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\CategorieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\CommentaireController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,6 +32,21 @@ Route::controller(CategorieController::class)->group(function (){
     Route::get('{categorie}/edit',  'edit')->name('categories.edit');
     Route::put('{categorie}', 'update')->name('categories.update');
     
+
+
+});
+
+
+Route::controller(CommentaireController::class)->group(function(){
+
+    Route::get('/commentaire','commentaire')->name('commentaire');
+    Route::post('/commentaire','commentairePost')->name('commentaire');
+
+    Route::get('/supprimer/{id}','supprimer')->name('supprimer');
+
+    Route::get('/modifier/{id}','modifier')->name('modifier');
+    Route::post('/modifier/traitement/','modifierPost')->name('modifier');
+
 
 
 });
