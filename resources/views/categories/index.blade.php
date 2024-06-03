@@ -15,6 +15,8 @@
                 <tr>
                     <th>Nom</th>
                     <th>Description</th>
+                    <th>Action</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +24,13 @@
                     <tr>
                         <td>{{ $categorie->nom }}</td>
                         <td>{{ $categorie->description }}</td>
+                        <td> <form action="{{ route('categories.destroy', $categorie->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form></td>
                     </tr>
+                  
                 @endforeach
             </tbody>
         </table>

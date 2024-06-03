@@ -35,4 +35,12 @@ class CategorieController extends Controller
           return redirect()->route('categories.index')
                            ->with('success', 'Catégorie créée avec succès.');
       }
+
+      public function destroy(Categorie $categorie)
+      {
+          $categorie->delete();
+
+          return redirect()->route('categories.index')
+                           ->with('success', 'Catégorie supprimée avec succès.');
+      }
 }
