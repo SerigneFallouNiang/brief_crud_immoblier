@@ -27,13 +27,17 @@
                 @foreach ($biens as $bien)
                 <tr>
                     <td>{{ $bien->nom }}</td>
-                    <td><img src="{{ $bien->image }}" alt="{{ $bien->nom }}" width="100" class="img-fluid"></td>
+                    <td>        <img src="{{ asset('storage/blog/'.$bien->image )}}" alt="{{ $bien->nom }}" width="50" class="img-fluid">
+                    </td>
+                    {{-- <td><img src="{{ $bien->image }}" alt="{{ $bien->nom }}" width="100" class="img-fluid"></td> --}}
                     <td>{{ $bien->description }}</td>
                     <td>{{ $bien->adresse }}</td>
                     <td>{{ $bien->statut ? 'Disponible' : 'Occupé' }}</td>
                     <td>{{ $bien->surface }} m²</td>
                     <td>{{ $bien->prix }} Cfa</td>
                     <td>
+                        <a href="{{ url('biens/' . $bien->id . '/edit') }}" class="bg-yellow-500 text-white px-4 py-2 rounded">Modifier</a>
+
                         <a href="{{ url('biens/show/'. $bien->id) }}" class="btn btn-info btn-sm">Voir</a>
                         <form action="{{ route('biens.destroy', $bien->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce bien ?');">
                             @csrf

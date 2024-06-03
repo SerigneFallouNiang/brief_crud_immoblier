@@ -72,4 +72,49 @@ class BienController extends Controller
 
         return redirect()->route('biens.index')->with('success', 'Bien supprimé avec succès.');
     }
+    public function edit($id)
+    {
+        $bien = Bien::findOrFail($id);
+        return view('biens.edit', compact('bien'));
+    }
+
+    // Met à jour un bien dans la base de données
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'adresse' => 'required|string|max:255',
+            'statut' => 'required|boolean',
+            'surface' => 'required|integer',
+            'prix' => 'required|integer',
+        ]);
+
+        $bien = Bien::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            // Supprimer l'ancienne image si elle existe
+            if ($bien->image) {
+                Storage::delete('public/blog/' . $bien->image);
+            }
+
+            // Stocker la nouvelle image
+            $chemin_image = $request->file('image')->store('public/biens');
+            $image = basename($chemin_image);
+            $bien->image = $image;
+        }
+
+        $bien->nom = $request->nom;
+        $bien->description = $request->description;
+        $bien->adresse = $request->adresse;
+        $bien->statut = $request->statut;
+        $bien->surface = $request->surface;
+        $bien->prix = $request->prix;
+
+        $bien->save();
+
+        return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès.');
+    }
+
 }
