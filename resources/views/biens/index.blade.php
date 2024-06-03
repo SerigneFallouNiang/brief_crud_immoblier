@@ -34,7 +34,8 @@
                     <td>{{ $bien->surface }} m²</td>
                     <td>{{ $bien->prix }} Cfa</td>
                     <td>
-                      
+                        <a href="{{ url('biens/show/'. $bien->id) }}" class="btn btn-info btn-sm">Voir</a>
+
                     </td>
                 </tr>
                 @endforeach

@@ -41,8 +41,12 @@ Route::controller(CategorieController::class)->group(function (){
 Route::controller(BienController::class)->group(function (){
 
     Route::get('biens', 'index')->name('biens.index');
+
     Route::get('biens/create', 'create')->name('biens.create');
     Route::post('biens/store', 'store')->name('biens.store');
+    Route::get('biens/show/{id}', 'show')->name('biens.show');
+
+
 
 
 });

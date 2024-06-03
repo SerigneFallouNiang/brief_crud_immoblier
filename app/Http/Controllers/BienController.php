@@ -56,4 +56,11 @@ class BienController extends Controller
 
         return redirect()->route('biens.index')->with('success', 'Bien créé avec succès.');
     }
+
+       // Affiche les détails d'un bien
+       public function show($id)
+       {
+           $bien = Bien::findOrFail($id);
+           return view('biens.show', compact('bien'));
+       }
 }
