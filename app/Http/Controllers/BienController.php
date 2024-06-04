@@ -28,7 +28,7 @@ class BienController extends Controller
             'adresse' => 'required|string|max:255',
             'surface' => 'required|integer',
             'prix' => 'required|integer',
-             'categorie_id' => 'required|exists:categories,id'
+             'categorie_id' => 'required|exists:categories,id',
         ]);
 
         $image = null;
@@ -55,7 +55,7 @@ class BienController extends Controller
         $article->surface = $request->surface;
         $article->prix = $request->prix;
         $article->categorie_id = $request->categorie_id;
-        $article->utilisateur_id = 1;
+        $article->utilisateur_id =  auth()->id();
         $article->save();
 
 

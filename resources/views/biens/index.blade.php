@@ -35,6 +35,9 @@
                     <td>{{ $bien->statut ? 'Disponible' : 'Occupé' }}</td>
                     <td>{{ $bien->surface }} m²</td>
                     <td>{{ $bien->prix }} Cfa</td>
+                    @auth
+
+
                     <td>
                         <a href="{{ url('biens/' . $bien->id . '/edit') }}" class="bg-yellow-500 text-white px-4 py-2 rounded">Modifier</a>
 
@@ -45,6 +48,8 @@
                             <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
                         </form>
                     </td>
+                    
+                    @endauth
                 </tr>
                 @endforeach
             </tbody>

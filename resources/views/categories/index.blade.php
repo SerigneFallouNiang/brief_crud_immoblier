@@ -7,6 +7,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    @if (!Auth::user())
+    <div class="row container center"></div>
+    <h1>
+     Désolé, vous n'êtes pas autorisé à accéder à cette page   </h1>
+     <a href="{{ route('biens.index') }}">Retour</a>
+
+    @else
     <div class="container mt-5">
         <h1>Catégories</h1>
         @if (session('success'))
@@ -43,6 +50,7 @@
             </tbody>
         </table>
     </div>
+    @endif
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

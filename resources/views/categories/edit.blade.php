@@ -8,7 +8,13 @@
 </head>
 <body>
 
+    @if (!Auth::user())
+    <div class="row container center"></div>
+    <h1>
+     Désolé, vous n'êtes pas autorisé à accéder à cette page   </h1>
+     <a href="{{ route('biens.index') }}">Retour</a>
 
+    @else
     <div class="container mt-5">
         <h1>Modifier la catégorie</h1>
 
@@ -35,6 +41,7 @@
             <button type="submit" class="btn btn-primary">Mettre à jour</button>
         </form>
     </div>
+    @endif
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
