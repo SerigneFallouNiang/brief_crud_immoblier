@@ -17,26 +17,45 @@
                 <div class="card-body">
         <form action="{{route('inscription')}}" method="post">
                     @csrf
-
+                    @if(Session::has('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ Session::get('error') }}
+                    </div>
+                     @endif
             <div class="mb-3">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" placeholder="nom" name="nom">
+                <input type="text" class="form-control" id="nom" placeholder="nom" name="nom" class="form-control @error('nom') is-invalid @enderror">
+                @error('nom')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
               </div>
             <div class="mb-3">
                 <label for="prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="nom" placeholder="prenom" name="prenom">
+                <input type="text" class="form-control" id="nom" placeholder="prenom" name="prenom" class="form-control @error('prenom') is-invalid @enderror">
+                @error('prenom')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="telephone" class="form-label">Telephone</label>
-                <input type="number" class="form-control" id="telephone" placeholder="telephone" name="telephone">
+                <input type="number" class="form-control" id="telephone" placeholder="telephone" name="telephone"  class="form-control @error('telephone') is-invalid @enderror">
+                @error('telephone')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="email" name="email">
+                <input type="email" class="form-control" id="email" placeholder="email" name="email" class="form-control @error('email') is-invalid @enderror">
+                @error('email')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="password" name="password">
+                <input type="password" class="form-control"  class="form-control @error('password') is-invalid @enderror"  id="password" placeholder="password" name="password">
+                @error('password')
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <div class="d-grid">
