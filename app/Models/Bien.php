@@ -18,4 +18,9 @@ class Bien extends Model
         'surface',
         'prix'
     ];
+
+    public function commentaires(): HasMany
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 }

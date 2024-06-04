@@ -31,7 +31,7 @@ class AuthController extends Controller
     $user->role="admin";
     $user->password=Hash::make($request->password);
     $user->save();
-    return back()->with('success','inscription avec succes');
+    return redirect()->route('connexion');
    }
 
    public function connexion(){

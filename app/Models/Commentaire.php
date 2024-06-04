@@ -12,5 +12,11 @@ class Commentaire extends Model
     protected $fillable = [
         'auteur',
         'contenu',   
+        'bien_id',
     ];
+
+    public function bien(): BelongsTo
+    {
+        return $this->belongsTo(Bien::class);
+    }
 }

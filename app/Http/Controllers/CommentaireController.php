@@ -28,6 +28,7 @@ class CommentaireController extends Controller
     public function modifier($id){
         $commentaires=Commentaire::find($id);
         return view('commentaires.modification',compact('commentaires'));
+    
     }
 
     public function modifierPost(Request $request){
@@ -35,7 +36,8 @@ class CommentaireController extends Controller
          $commentaire->auteur=$request->auteur;
          $commentaire->contenu=$request->contenu;
          $commentaire->update();
-        return redirect()->back()->with('success','commentaire modifier avec succes');
+        return redirect()->route('biens.show', $commentaire->bien_id)->with('status', 'Commentaire mis à jour avec succès');
+
 
     }
 

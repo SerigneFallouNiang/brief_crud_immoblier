@@ -53,7 +53,6 @@ Route::controller(BienController::class)->group(function (){
     Route::get('biens/{id}/edit',  'edit')->name('biens.edit');
     Route::put('biens/{id}/update', 'update')->name('biens.update');
 
-
 });
 
 

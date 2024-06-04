@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bien;
+use App\Models\Commentaire;
 use Illuminate\Http\Request;
 
 class BienController extends Controller
@@ -60,8 +61,10 @@ class BienController extends Controller
        // Affiche les détails d'un bien
        public function show($id)
        {
+        $commentaires=Commentaire::All();
+
            $bien = Bien::findOrFail($id);
-           return view('biens.show', compact('bien'));
+           return view('biens.show', compact('bien','commentaires'));
        }
 
        // Supprime un bien de la base de données
