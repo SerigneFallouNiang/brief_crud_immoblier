@@ -26,13 +26,13 @@ class Bien extends Model
         return $this->hasMany(Commentaire::class);
     }
 
-    public function categorie(): BelongsTo
+    public function categorie()
     {
         return $this->belongsTo(Categorie::class);
     }
 
-    public function user(): BelongsTo
+    public function utilisateur()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(user::class);
     }
 }
