@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bien;
+use App\Models\Categorie;
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class BienController extends Controller
     }
     public function create()
     {
-        return view('biens.create', );
+        $categories=Categorie::All();
+        return view('biens.create',compact('categories') );
     }
     public function store(Request $request)
     {
@@ -26,7 +28,7 @@ class BienController extends Controller
             'adresse' => 'required|string|max:255',
             'surface' => 'required|integer',
             'prix' => 'required|integer',
-            // 'category_id' => 'required|exists:categories,id'
+             'categorie_id' => 'required|exists:categories,id'
         ]);
 
         $image = null;
@@ -52,6 +54,8 @@ class BienController extends Controller
         $article->statut = 1;
         $article->surface = $request->surface;
         $article->prix = $request->prix;
+        $article->categorie_id = $request->categorie_id;
+        $article->utilisateur_id = 1;
         $article->save();
 
 
@@ -78,7 +82,8 @@ class BienController extends Controller
     public function edit($id)
     {
         $bien = Bien::findOrFail($id);
-        return view('biens.edit', compact('bien'));
+        $categories=Categorie::All();
+        return view('biens.edit', compact('bien','categories'));
     }
 
     // Met à jour un bien dans la base de données

@@ -22,6 +22,15 @@
             @csrf
             @method('PUT')
             <div class="form-group">
+                <label for="categorie_id">Catégorie</label>
+                <select name="categorie_id" id="categorie_id" class="form-control" required>
+                <option value="">Choisissez une catégorie</option>
+                @foreach($categories as $categorie)
+                <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
+                @endforeach
+                </select>
+                </div>
+            <div class="form-group">
                 <label for="nom">Nom</label>
                 <input type="text" name="nom" class="form-control" value="{{ $bien->nom }}" required>
             </div>

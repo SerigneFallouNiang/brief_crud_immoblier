@@ -16,11 +16,23 @@ class Bien extends Model
         'adresse',
         'statut',
         'surface',
-        'prix'
+        'prix',
+        'categorie_id',
+        'utilisateur_id',
     ];
 
     public function commentaires(): HasMany
     {
         return $this->hasMany(Commentaire::class);
+    }
+
+    public function categorie(): BelongsTo
+    {
+        return $this->belongsTo(Categorie::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

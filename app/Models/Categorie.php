@@ -11,4 +11,9 @@ class Categorie extends Model
 
     use HasFactory;
     protected $fillable = ['nom', 'description'];
+
+    public function biens(): HasMany
+    {
+        return $this->hasMany(Bien::class);
+    }
 }
