@@ -103,13 +103,13 @@ class BienController extends Controller
         $bien = Bien::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            // Supprimer l'ancienne image si elle existe
-            if ($bien->image) {
-                Storage::delete('public/blog/' . $bien->image);
-            }
+            // // Supprimer l'ancienne image si elle existe
+            // if ($bien->image) {
+            //     Storage::put('public/blog' . $bien->image);
+            // }
 
             // Stocker la nouvelle image
-            $chemin_image = $request->file('image')->store('public/biens');
+            $chemin_image = $request->file('image')->store('public/blog');
             $image = basename($chemin_image);
             $bien->image = $image;
         }

@@ -158,8 +158,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                         @auth
                         <div class=" justify-center flex items-center">
-
-
                             {{-- btn trois poins pour admin --}}
                             <button onclick="openModal('modal-{{ $bien->id }}')"
                                 class="  justify-center place-items-center  text-gray-700  ">

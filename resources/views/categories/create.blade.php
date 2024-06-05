@@ -1,3 +1,10 @@
+
+@if (!Auth::user())
+    <div class="row ml-96 container justify-center items-center center">
+        <h1>
+            Désolé, vous n'êtes pas autorisé à accéder à cette page </h1>
+        <a href="{{ route('biens.index') }}">Retour</a>
+    @else
 <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
     <h1 class="text-xl font-bold text-gray-900 mb-5">Créer une catégorie</h1>
     <form action="{{ route('categories.store') }}" method="POST">
@@ -17,6 +24,8 @@
                 class="ml-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Annuler</button>
         </div>    </form>
 </div>
+
+@endauth
 
 {{--  Popup js --}}
 

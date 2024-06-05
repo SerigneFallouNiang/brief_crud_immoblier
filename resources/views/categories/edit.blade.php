@@ -10,9 +10,10 @@
         <div class="center justify-center mt-20  ml-96 pl-48 items-center">
 
             <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-                <h1 class="text-xl font-bold text-gray-900 mb-5">Créer une catégorie</h1>
+                <h1 class="text-xl font-bold text-gray-900 mb-5">Modifier une catégorie</h1>
                 <form action="{{ route('categories.update', $categorie->id) }}" method="POST">
                     @csrf
+                    @method('put')
                     <div class="form-group">
                         <label for="nom" class="w-full p-2  border-gray-300 rounded">Nom</label>
                         <input type="text" name="nom" class="w-full p-2 border border-gray-300 rounded"
