@@ -12,7 +12,8 @@ class BienController extends Controller
     public function index()
     {
         $biens = Bien::all();
-        return view('welcome', compact('biens'));
+        $categories = Categorie::all();
+        return view('welcome', compact('biens','categories'));
     }
     public function create()
     {

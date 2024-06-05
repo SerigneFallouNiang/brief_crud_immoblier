@@ -1,73 +1,61 @@
-<!DOCTYPE html>
-<html lang="fr">
+{{-- popup ajoute pour biens --}}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un Bien</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    @auth
-
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <div class="container mt-5">
-            <h1>Créer un bien</h1>
-            <form action="{{ route('biens.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('post')
-                <div class="form-group">
-                    <label for="categorie_id">Catégorie</label>
-                    <select name="categorie_id" id="categorie_id" class="form-control" required>
-                        <option value="">Choisissez une catégorie</option>
-                        @foreach ($categories as $categorie)
-                            <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" class="form-control" id="nom" required>
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" name="description" class="form-control" id="description" required>
-                </div>
-                <div class="form-group">
-                    <label for="adresse">Adresse</label>
-                    <input type="text" name="adresse" class="form-control" id="adresse" required>
-                </div>
-                <div class="form-group">
-                    <label for="surface">Surface</label>
-                    <input type="number" name="surface" class="form-control" id="surface" required>
-                </div>
-                <div class="form-group">
-                    <label for="prix">Prix</label>
-                    <input type="number" name="prix" class="form-control" id="prix" required>
-                </div>
-                <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control" id="image">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Soumettre</button>
-            </form>
+<div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-xl font-bold text-gray-900 mb-5">Créer un bien</h1>
+    <form action="{{ route('biens.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('post')
+        <div class="form-group">
+            <label for="categorie_id">Catégorie</label>
+            <select name="categorie_id" id="categorie_id"
+                class="w-full p-2 border border-gray-300 rounded" rows="4" required>
+                <option value="">Choisissez une catégorie</option>
+                @foreach ($categories as $categorie)
+                    <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
+                @endforeach
+            </select>
         </div>
-    @endauth
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" class="w-full p-2 border border-gray-300 rounded"
+                rows="4" id="nom" required>
+        </div>
+        <div class="from-group">
+            <label for="description" class="w-full p-2  border-gray-300 rounded"
+                rows="4">Description</label>
+            <textarea name="description" id="description" class="w-full p-2 border border-gray-300 rounded" rows="4"
+                placeholder="Votre description..." required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="adresse" class="w-full p-2  border-gray-300 rounded"
+                rows="4">Adresse</label>
+            <input type="text" name="adresse" class="w-full p-2 border border-gray-300 rounded"
+                rows="4" id="adresse" required>
+        </div>
+        <div class="form-group">
+            <label for="surface" class="w-full p-2 rounded" rows="4">Surface</label>
+            <input type="number" name="surface" class="w-full p-2 border border-gray-300 rounded"
+                rows="4" id="surface" required>
+        </div>
+        <div class="form-group">
+            <label for="prix" class="w-full p-2  border-gray-300 rounded"
+                rows="4">Prix</label>
+            <input type="number" name="prix" class="w-full p-2 border border-gray-300 rounded"
+                rows="4" id="prix" required>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="w-full p-2  border-gray-300 rounded" rows="4"
+                class="form-label">Image</label>
+            <input type="file" name="image" class="w-full p-2 border border-gray-300 rounded"
+                rows="4" id="image">
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+        <div class="text-right">
+            <button type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Envoyer</button>
+            <button type="button" onclick="closePopup()"
+                class="ml-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Annuler</button>
+        </div>
+    </form>
 
-</html>
+</div>

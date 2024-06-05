@@ -35,20 +35,29 @@ body {
 </style>
 </head>
 <body>
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto flex justify-between items-center p-8">
+    <header class="bg-white shadow-md pb-16  ">
+        <div class="container mx-auto bg-white  fixed bg-fixed z-50 flex justify-between px-36 items-center py-4">
             <a href="#" class="text-3xl font-bold text-gray-800">Mon Blog Immobilier</a>
             <nav>
                 <ul class="flex space-x-4">
+                    @auth
                     <li>
-                        @auth
-                        <form action="{{ route('deconnexion') }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger border-t-neutral-400 text-" type="submit">Déconnexion</button>
-                        </form>
-                        @endauth
+                        <button onclick="openPopup()"
+                        class="  text-blue-500 px-4 py-2 rounded hover:text-white hover:bg-blue-700">Ajouter un nouveau
+                        bien</button>
+                        <a href="{{ route('categories.index') }}" class=" text-blue-500 hover:text-white  px-4 py-2 rounded hover:bg-blue-700">Categories</a>
                     </li>
+                    <li>
+
+                            <form action="{{ route('deconnexion') }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger  text-red-600 px-4 py-2 rounded hover:text-white hover:bg-red-700" border-t-neutral-400 text-"
+                                    type="submit">Déconnexion</button>
+                            </form>
+
+                    </li>
+                    @endauth
                 </ul>
             </nav>
         </div>
