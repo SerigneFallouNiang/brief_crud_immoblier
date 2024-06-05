@@ -21,14 +21,13 @@ Route::controller(AuthController::class)->group(function(){
     Route::post('/connexion','connexionPost')->name('connexion');
 
     Route::delete('/deconnexion','deconnexion')->name('deconnexion');
-
 });
-
 
 Route::controller(CategorieController::class)->group(function (){
     Route::get('categories', 'index')->name('categories.index');
     Route::get('categories/create', 'create')->name('categories.create');
     Route::post('categories/store', 'store')->name('categories.store');
+    
     Route::delete('{categorie}', 'destroy')->name('categories.destroy');
 
     Route::get('{categorie}/edit',  'edit')->name('categories.edit');

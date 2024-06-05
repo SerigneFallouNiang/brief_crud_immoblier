@@ -100,7 +100,7 @@
                     <div class="p-4">
                         <div class="flex items-center justify-between my-4">
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
-                                Catégorie: {{ $bien->categorie->nom }}
+                                {{-- Catégorie: {{ $bien->categorie->nom }} --}}
                             </span>
                             <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">
                                 Prix: {{ $bien->prix }} XOF
