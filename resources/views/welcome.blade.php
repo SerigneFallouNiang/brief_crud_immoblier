@@ -1,93 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog immobilier</title>
-    <meta name="description" content="Blog immobilier pour trouver votre maison de rêve">
-    <meta name="keywords" content="immobilier, maison, appartement, vente, location">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Blog immobilier</title>
-        <meta name="description" content="Blog immobilier pour trouver votre maison de rêve">
-        <meta name="keywords" content="immobilier, maison, appartement, vente, location">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-        <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <style>
-            .popup-form {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 50;
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.3s ease-in-out;
-            }
-
-            .popup-form.active {
-                opacity: 1;
-                pointer-events: auto;
-            }
-        </style>
-        <style>
-            .carousel-item {
-                background-size: cover;
-                background-position: center;
-                transition: opacity 1s ease-in-out;
-            }
-
-            .carousel-item.hidden {
-                opacity: 0;
-            }
-
-            .carousel-item.active {
-                opacity: 1;
-            }
-        </style>
-    </head>
-
-<body class="bg-slate-400">
-
-    <header class="bg-white shadow-md pb-16  ">
-        <div class="container mx-auto bg-white  fixed bg-fixed z-50 flex justify-between px-36 items-center py-4">
-            <a href="#" class="text-3xl font-bold text-gray-800">Mon Blog Immobilier</a>
-            <nav>
-                <ul class="flex space-x-4">
-                    @auth
-                    <li>
-                        <button onclick="openPopup()"
-                        class="  text-blue-500 px-4 py-2 rounded hover:text-white hover:bg-blue-700">Ajouter un nouveau
-                        bien</button>
-                        <a href="{{ route('categories.index') }}" class=" text-blue-500 hover:text-white  px-4 py-2 rounded hover:bg-blue-700">Categories</a>
-                    </li>
-                    <li>
-
-                            <form action="{{ route('deconnexion') }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger  text-red-600 px-4 py-2 rounded hover:text-white hover:bg-red-700" border-t-neutral-400 text-"
-                                    type="submit">Déconnexion</button>
-                            </form>
-
-                    </li>
-                    @endauth
-                </ul>
-            </nav>
-        </div>
-    </header>
+{{-- navbar --}}
+@include('nav')
+{{-- navbar --}}
 
     <section class="carousel mb-12 relative bg-slate-400">
         <div class="container mx-auto">
@@ -95,26 +8,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <div class="carousel-item h-96 bg-no-repeat items-center bg-cover bg-gradient-to-b active"
                     style="background-image: url('https://content.refindly.com/quailwestnapleshomes_com/uploads/2015/09/Astbury-Villa.jpg')">
                     <div
-                        class="carousel-caption  text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
-                        <h5 class="text-white font-bold">Titre du slide 1</h5>
-                        <p class="text-white">Description du slide 1</p>
+                        class="carousel-caption w-full absolute bottom-0 text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h5 class="text-white font-bold">
+                            Agent immobilier </h5>
+                        <p class="text-white">L’agent immobilier accompagne des clients qui souhaitent vendre, acheter ou louer un bien immobillier. </p>
                     </div>
                 </div>
                 <div class="carousel-item h-96 bg-no-repeat bg-cover bg-gradient-to-b hidden"
-                    style="background-image: url('https://content.refindly.com/quailwestnapleshomes_com/uploads/2015/09/Astbury-Villa.jpg')">
+                    style="background-image: url('https://www.mahapremium.ma/upload/slides/road_2.jpg')">
                     <div
-                        class="carousel-caption  text-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
-                        <h5 class="text-white font-bold">Titre du slide 2</h5>
-                        <p class="text-white">Description du slide 2</p>
+                        class="carousel-caption w-full absolute bottom-0 text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h5 class="text-white font-bold">
+                            Agent immobilier </h5>
+                        <p class="text-white">L’agent immobilier accompagne des clients qui souhaitent vendre, acheter ou louer un bien immobillier. </p>
                     </div>
                 </div>
                 <div class="carousel-item h-96 bg-no-repeat bg-cover bg-gradient-to-b hidden"
-                    style="background-image: url('https://content.refindly.com/quailwestnapleshomes_com/uploads/2015/09/Astbury-Villa.jpg')">
+                    style="background-image: url('https://www.sciencesetavenir.fr/assets/img/2022/09/22/cover-r4x3w1200-632c594538d70-bien-virtuel-immobilier.jpg')">
                     <div
-                        class="carousel-caption  text-center bottom-0 p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
-                        <h5 class="text-white font-bold">Titre du slide 3</h5>
-                        <p class="text-white">Description du slide 3</p>
-                    </div>
+                    class="carousel-caption w-full absolute bottom-0 text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
+                    <h5 class="text-white font-bold">
+                        Agent immobilier </h5>
+                    <p class="text-white">L’agent immobilier accompagne des clients qui souhaitent vendre, acheter ou louer un bien immobillier. </p>
+                </div>
                 </div>
             </div>
         </div>

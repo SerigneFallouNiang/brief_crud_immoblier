@@ -7,9 +7,9 @@ use App\Http\Controllers\CommentaireController;
 
 use App\Http\Controllers\BienController;
 
-Route::get('/a', function () {
-    return view('welcome');
-});
+// Route::get('/a', function () {
+//     return view('welcome');
+// });
 
 
 Route::controller(AuthController::class)->group(function(){

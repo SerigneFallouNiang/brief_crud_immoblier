@@ -66,7 +66,7 @@ class BienController extends Controller
        // Affiche les détails d'un bien
        public function show($id)
        {
-        $commentaires=Commentaire::All();
+        $commentaires=Commentaire::all()->where('commentaire_id',$id);
 
            $bien = Bien::findOrFail($id);
            return view('biens.show', compact('bien','commentaires'));
