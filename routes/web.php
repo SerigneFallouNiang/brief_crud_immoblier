@@ -27,11 +27,12 @@ Route::controller(CategorieController::class)->group(function (){
     Route::get('categories', 'index')->name('categories.index');
     Route::get('categories/create', 'create')->name('categories.create');
     Route::post('categories/store', 'store')->name('categories.store');
-    
-    Route::delete('{categorie}', 'destroy')->name('categories.destroy');
 
-    Route::get('{categorie}/edit',  'edit')->name('categories.edit');
-    Route::put('{categorie}', 'update')->name('categories.update');
+    
+    Route::delete('categories{id}', 'destroy')->name('categories.destroy');
+
+    Route::get('categories/{id}/edit',  'edit')->name('categories.edit');
+    Route::put('categories/{id}', 'update')->name('categories.update');
 
 
 
@@ -48,7 +49,7 @@ Route::controller(BienController::class)->group(function (){
     Route::post('biens/store', 'store')->name('biens.store');
     Route::get('biens/show/{id}', 'show')->name('biens.show');
 
-    Route::delete('{biens}', 'destroy')->name('biens.destroy');
+    Route::delete('biens/{biens}', 'destroy')->name('biens.destroy');
 
     Route::get('biens/{id}/edit',  'edit')->name('biens.edit');
     Route::put('biens/{id}/update', 'update')->name('biens.update');

@@ -44,8 +44,9 @@ class CategorieController extends Controller
                            ->with('success', 'Catégorie supprimée avec succès.');
       }
 
-      public function edit(Categorie $categorie)
+      public function edit($id)
       {
+        $categorie=Categorie::find($id);
           return view('categories.edit', compact('categorie'));
       }
 
