@@ -28,6 +28,7 @@
                         <label for="categorie_id">Catégorie</label>
                         <select name="categorie_id" id="categorie_id" class="w-full p-2 border border-gray-300 rounded" required>
                             @foreach ($categories as $categorie)
+                                <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>
                                 <option value="{{ $categorie->id }}">{{ $categorie->nom ? 'selected' : ''}}</option>
                             @endforeach
                         </select>

@@ -29,10 +29,10 @@ Route::controller(CategorieController::class)->group(function (){
     Route::post('categories/store', 'store')->name('categories.store');
 
     
-    Route::delete('categories{id}', 'destroy')->name('categories.destroy');
+    Route::delete('categories{categorie}', 'destroy')->name('categories.destroy');
 
     Route::get('categories/{id}/edit',  'edit')->name('categories.edit');
-    Route::put('categories/{id}', 'update')->name('categories.update');
+    Route::put('categories/{categorie}', 'update')->name('categories.update');
 
 
 

@@ -20,7 +20,7 @@ class AuthController extends Controller
         'prenom' => 'required|string|max:50|regex:/^[\pL\s\-]+$/u',
         'telephone' => 'required|string|max:15|regex:/^[0-9\s\+\-\(\)]+$/',
         'email' => 'required|email|unique:users,email|max:255',
-        'password' => 'required|string|min:8|max:100|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/',
+        'password' => 'required|string|min:4|max:100',
     ], [
         // Messages pour le champ 'nom'
         'nom.required' => 'Le champ nom est obligatoire.',
@@ -51,7 +51,6 @@ class AuthController extends Controller
         'password.string' => 'Le mot de passe doit être une chaîne de caractères.',
         'password.min' => 'Le mot de passe doit contenir au moins 8 caractères.',
         'password.max' => 'Le mot de passe ne doit pas dépasser 100 caractères.',
-        'password.regex' => 'Le mot de passe doit contenir au moins une minuscule, une majuscule, un chiffre et un caractère spécial (@, $, !, %, *, ?, &).',
     ]);
     $user= new User();
     $user->nom=$request->nom;
