@@ -27,25 +27,25 @@ class AuthController extends Controller
         'nom.string' => 'Le nom doit être une chaîne de caractères.',
         'nom.max' => 'Le nom ne doit pas dépasser 30 caractères.',
         'nom.regex' => 'Le nom ne doit contenir que des lettres, espaces et tirets.',
-    
+
         // Messages pour le champ 'prenom'
         'prenom.required' => 'Le champ prénom est obligatoire.',
         'prenom.string' => 'Le prénom doit être une chaîne de caractères.',
         'prenom.max' => 'Le prénom ne doit pas dépasser 50 caractères.',
         'prenom.regex' => 'Le prénom ne doit contenir que des lettres, espaces et tirets.',
-    
+
         // Messages pour le champ 'telephone'
         'telephone.required' => 'Le champ numéro de téléphone est obligatoire.',
         'telephone.string' => 'Le numéro de téléphone doit être une chaîne de caractères.',
         'telephone.max' => 'Le numéro de téléphone ne doit pas dépasser 15 caractères.',
         'telephone.regex' => 'Le numéro de téléphone ne doit contenir que des chiffres, espaces et caractères (+, -, (, )).',
-    
+
         // Messages pour le champ 'email'
         'email.required' => 'Le champ email est obligatoire.',
         'email.email' => 'Veuillez entrer une adresse email valide.',
         'email.unique' => 'Cette adresse email est déjà utilisée.',
         'email.max' => 'L\'email ne doit pas dépasser 255 caractères.',
-    
+
         // Messages pour le champ 'password'
         'password.required' => 'Le champ mot de passe est obligatoire.',
         'password.string' => 'Le mot de passe doit être une chaîne de caractères.',

@@ -62,7 +62,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <body class="bg-slate-400">
 
     <header class="bg-white shadow-md pb-16  ">
-        <div class="shadow-md w-full mx-auto bg-white  fixed bg-fixed z-50 flex justify-between px-36 items-center py-4">
+        <div class="container mx-auto bg-white  fixed bg-fixed z-50 flex justify-between px-36 items-center py-4">
             <a href="#" class="text-3xl font-bold text-gray-800">Mon Blog Immobilier</a>
             <nav>
                 <ul class="flex space-x-4">
@@ -95,27 +95,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <div class="carousel-item h-96 bg-no-repeat items-center bg-cover bg-gradient-to-b active"
                     style="background-image: url('https://content.refindly.com/quailwestnapleshomes_com/uploads/2015/09/Astbury-Villa.jpg')">
                     <div
-                        class="carousel-caption  text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
-                        <h5 class="text-white font-bold">Titre du slide 1</h5>
-                        <p class="text-white">Description du slide 1</p>
+                        class="carousel-caption w-full absolute bottom-0 text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h5 class="text-white font-bold">
+                            Agent immobilier </h5>
+                        <p class="text-white">L’agent immobilier accompagne des clients qui souhaitent vendre, acheter ou louer un bien immobillier. </p>
                     </div>
                 </div>
                 <div class="carousel-item h-96 bg-no-repeat bg-cover bg-gradient-to-b hidden"
-                    style="background-image: url('https://img.freepik.com/photos-gratuite/nouveaux-batiments-espaces-verts_1122-1533.jpg?t=st=1717591006~exp=1717594606~hmac=2268d4897c50389894cef88d99df7808aee72d13a5ccbb0bb50945c546e412cb&w=740')">
+                    style="background-image: url('https://content.refindly.com/quailwestnapleshomes_com/uploads/2015/09/Astbury-Villa.jpg')">
                     <div
-                        class="carousel-caption  text-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
-                        <h5 class="text-white font-bold">Titre du slide 2</h5>
-                        <p class="text-white">Description du slide 2</p>
+                        class="carousel-caption w-full absolute bottom-0 text-center pt-16 justify-items-center p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
+                        <h5 class="text-white font-bold">
+                            Agent immobilier </h5>
+                        <p class="text-white">L’agent immobilier accompagne des clients qui souhaitent vendre, acheter ou louer un bien immobillier. </p>
                     </div>
                 </div>
 
                 <div class="carousel-item h-96 bg-no-repeat bg-cover bg-gradient-to-b hidden"
-                    style="background-image: url('https://content.refindly.com/quailwestnapleshomes_com/uploads/2015/09/Astbury-Villa.jpg')">
+                    style="background-image: url('https://www.sciencesetavenir.fr/assets/img/2022/09/22/cover-r4x3w1200-632c594538d70-bien-virtuel-immobilier.jpg')">
                     <div
                         class="carousel-caption  text-center bottom-0 p-4 align-middle items-center justify-center bg-black bg-opacity-50 text-white">
                         <h5 class="text-white font-bold">Titre du slide 3</h5>
                         <p class="text-white">Description du slide 3</p>
-
                     </div>
                 </div>
             </div>

@@ -61,8 +61,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body class="bg-slate-400">
 
-    <header class="bg-white fixed shadow-md border-x-2 shadow-2xl pb-16  ">
-        <div class="container mx-auto bg-white  fixed bg-fixed z-50 flex justify-between px-36 items-center py-">
+    <header class="bg-white  border-x-2 shadow-2xl pb-16  ">
+        <div class="container mx-auto bg-white shadow-lg border-x-2 h-20  fixed bg-fixed z-50 flex justify-between px-36 items-center py-">
+
             <a href="{{ route('biens.index') }}" class="text-3xl font-bold text-gray-800">FS Immobilier</a>
             <nav>
                 <ul class="flex space-x-4">

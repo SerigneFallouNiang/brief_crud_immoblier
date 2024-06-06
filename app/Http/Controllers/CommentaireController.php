@@ -28,7 +28,7 @@ class CommentaireController extends Controller
     public function modifier($id){
         $commentaires=Commentaire::find($id);
         return view('commentaires.modification',compact('commentaires'));
-    
+
     }
 
     public function modifierPost(Request $request){
