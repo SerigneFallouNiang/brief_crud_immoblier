@@ -14,6 +14,16 @@ class CommentaireController extends Controller
     }
 
     public function commentairePost(Request $request){
+        $request->validate([
+            'auteur' => 'required|string|max:30|min:3',
+            'contenu' => 'required|string|min:3'],
+        
+            [ 'auteur.required' => 'Le champ nom est obligatoire.',
+        'auteur.string' => 'Le nom doit être une chaîne de caractères.',
+        'contenu.required' => 'Le champ commentaire est obligatoire.',]);
+
+
+
        Commentaire::create($request->all());
 
         return redirect()->back();

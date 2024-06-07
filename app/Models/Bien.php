@@ -33,6 +33,6 @@ class Bien extends Model
 
     public function utilisateur()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 }

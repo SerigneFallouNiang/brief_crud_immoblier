@@ -18,8 +18,8 @@
                 </div>
             @endif
             <button onclick="openPopup()"
-            class="  text-blue-500 px-4 py-2 rounded hover:text-white hover:bg-blue-700">Ajouter un nouveau
-            bien</button>
+            class="  text-blue-500 px-4 py-2 rounded hover:text-white hover:bg-blue-700">Ajouter une nouvelle
+            Categorie</button>
            
             <div class="overflow-x-auto items-center justify-center w-5/6  bg-white rounded-lg shadow-md">
                 <table class=" w-full bg-white">
